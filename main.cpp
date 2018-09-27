@@ -6,85 +6,6 @@ using namespace std;
 #define fi first
 #define se second
 
-/*struct matrix {
-     
-     int n, m;
-     
-     vector<vector<int>> a;
-     matrix() {};
-     matrix(int n, int m) {
-          this->n = n;
-          this->m = m;
-          a.resize(n, vector<int>(m));
-     }
-     matrix(int n, int m, vector<vector<int>> pat) {
-          this->n = n;
-          this->m = m;
-          a = pat;
-     }
-     
-     friend matrix operator * (matrix a, matrix b) {
-          if (a.m != b.n) {
-               cout << "Error";
-               exit(0);
-          }
-          matrix res(a.n, b.m);
-          for (int i = 0; i < res.n; ++i) {
-               for (int j = 0; j < res.m; ++j) {
-                    for (int k = 0; k < a.m; ++k) {
-                         res.a[i][j] += a.a[i][k] * b.a[k][j];
-                    }
-               }
-          }
-          return res;
-     }
-     
-     friend matrix operator + (matrix a, matrix b) {
-          matrix res(a.n, a.m);
-          for (int i = 0; i < a.n; ++i) {
-               for (int j = 0; j < a.m; ++j) {
-                    res.a[i][j] = a.a[i][j] + b.a[i][j];
-               }
-          }
-          return res;
-     }
-     
-     friend matrix operator - (matrix a, matrix b) {
-          matrix res(a.n, a.m);
-          for (int i = 0; i < a.n; ++i) {
-               for (int j = 0; j < a.m; ++j) {
-                    res.a[i][j] = a.a[i][j] - b.a[i][j];
-               }
-          }
-          return res;
-     }
-     
-     friend matrix operator ! (matrix a) {
-          matrix res = a;
-          res.transpone();
-          return res;
-     }
-     
-     void transpone() {
-          matrix res(m, n);
-          for (int i = 0; i < n; ++i) {
-               for (int j = 0; j < m; ++j) {
-                    res.a[j][i] = a[i][j];
-               }
-          }
-          swap(n, m);
-          a = res.a;
-     }
-     void show() {
-          cout << n << ' ' << m << endl;
-          for (int i = 0; i < n;++i) {
-               for (int j = 0; j < m; ++j) {
-                    cout << a[i][j] << ' ';
-               }
-               cout << endl;
-          }
-     }
-};*/
 
 vector<int> xorr(vector<int> a, vector<int> b) {
      vector<int> ans(a.size());
@@ -171,11 +92,13 @@ vector<int> SolveLinearSystem(vector<vector<int>> a)
 signed main()
 {
      cout << "ADD IT IN THE TOP OF YOUT LATEX DOC\n";
-     cout << "\\newcommand{\\symbolsOnStackRel}[1]{\\xrightarrow{\\substack{#1}}%" << endl;
+     cout << "\\newcommand{\\symbolsOnStackRel}[1]{\\xrightarrow{\\substack{#1}}" << endl;
      cout << endl;
      //srand(time(nullptr));
      vector<vector<int>> a(8, vector<int>(9));
+     //YOUR COEFFICIENTS HERE
      vector<int> coef = {226, 247, 40, 7, 107, 138, 170, 160, 108};
+     
      for (int i = 0; i < 9; ++i) {
           for (int j =0; j < 8; ++j) {
                if ((coef[i] >> j) & 1) {
@@ -184,8 +107,7 @@ signed main()
           }
      }
      for (int i = 0; i < 256; ++i) {
-          //!!! YOUR COEF HERE
-          //vector<int> coef = {82, 107, 168, 62, 87, 153, 84, 129, 61};
+          
           vector<int> znach(8);
           for (int j = 0; j < 8; ++j) {
                if ((i >> j) & 1) {
@@ -207,30 +129,6 @@ signed main()
           }
           
      }
-     //TRANSLATE EVER NUMBER TO BINARY
-     /*vector<vector<int>> a = {
-          {1, 1, 1, 0, 1, 0, 0, 0, 1},
-          {1, 0, 1, 1, 0, 1, 0, 1, 1},
-          {0, 1, 1, 0, 1, 0, 1, 1, 0},
-          {0, 0, 0, 1, 1, 0, 0, 0, 0},
-          {0, 1, 0, 0, 1, 0, 1, 0, 0},
-          {1, 0, 0, 0, 1, 0, 0, 1, 1},
-          {1, 1, 1, 1, 1, 1, 0, 0, 0},
-          {1, 0, 1, 1, 1, 1, 0, 1, 0}
-     };*/
-     /*
-     
-     vector<vector<int>> a = {
-          {0, 0, 1, 0, 0, 1, 0, 1, 0},
-          {1, 1, 0, 0, 1, 0, 1, 0, 0},
-          {0, 1, 1, 1, 0, 0, 0, 0, 1},
-          {1, 0, 0, 1, 1, 1, 1, 0, 1},
-          {0, 1, 1, 1, 0, 1, 0, 0, 1},
-          {0, 0, 0, 1, 1, 0, 1, 0, 1},
-          {1, 1, 0, 1, 1, 0, 0, 0, 0},
-          {0, 1, 0, 0, 1, 1, 0, 1, 1}
-     };*/
-     
      cout << "\\begin{bmatrix}\n";
 
      for (int i = 0; i < 8; ++i) {
