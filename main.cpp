@@ -92,7 +92,7 @@ vector<int> SolveLinearSystem(vector<vector<int>> a)
 signed main()
 {
      cout << "ADD IT IN THE TOP OF YOUT LATEX DOC\n";
-     cout << "\\newcommand{\\symbolsOnStackRel}[1]{\\xrightarrow{\\substack{#1}}" << endl;
+     cout << "\\newcommand{\\symbolsOnStackRel}[1]{\\xrightarrow{\\substack{#1}}}" << endl;
      cout << endl;
      //srand(time(nullptr));
      vector<vector<int>> a(8, vector<int>(9));
